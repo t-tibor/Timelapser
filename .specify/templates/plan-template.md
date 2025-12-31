@@ -31,7 +31,16 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+Verify compliance with `.specify/memory/constitution.md`:
+
+- [ ] **Pragmatic Simplicity**: Does this feature follow YAGNI principles? No speculative features?
+- [ ] **Containerized Deployment**: Can this be containerized? ARM64 compatible? Health checks planned?
+- [ ] **Async Task Processing**: Long-running operations (RTSP, video) handled asynchronously?
+- [ ] **Resource Constraints**: Memory/CPU limits considered for Raspberry Pi 5?
+- [ ] **Progressive Enhancement**: User stories prioritized (P1, P2, P3)? Each independently testable?
+- [ ] **Technical Stack**: ARM64 compatible? Supports required constraints (Docker, k3s, RTSP, FFmpeg)? Preferred tech considered?
+
+**Violations requiring justification**: [None OR list with rationale in Complexity Tracking section below]
 
 ## Project Structure
 
