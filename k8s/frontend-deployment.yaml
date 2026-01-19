@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: timelapser-frontend
+  labels:
+    app: timelapser-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: timelapser-frontend
+  template:
+    metadata:
+      labels:
+        app: timelapser-frontend
+    spec:
+      containers:
+      - name: frontend
+        image: timelapser-frontend:latest
+        ports:
+        - containerPort: 3000
+        env:
+        - name: BACKEND_URL
+          value: "http://timelapser-backend-service:8000"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "100m"
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 3000
+          initialDelaySeconds: 30
+          periodSeconds: 30
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 3000
+          initialDelaySeconds: 5
+          periodSeconds: 10

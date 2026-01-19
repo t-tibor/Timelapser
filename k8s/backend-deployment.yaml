@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: timelapser-backend
+  labels:
+    app: timelapser-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: timelapser-backend
+  template:
+    metadata:
+      labels:
+        app: timelapser-backend
+    spec:
+      containers:
+      - name: backend
+        image: timelapser-backend:latest
+        ports:
+        - containerPort: 8000
+        env:
+        - name: ENVIRONMENT
+          value: "production"
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /api/health
+            port: 8000
+          initialDelaySeconds: 30
+          periodSeconds: 30
+        readinessProbe:
+          httpGet:
+            path: /api/health
+            port: 8000
+          initialDelaySeconds: 5
+          periodSeconds: 10

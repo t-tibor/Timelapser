@@ -17,13 +17,13 @@
 
 **Purpose**: Project initialization and basic structure
 
-- [ ] T001 Create project structure with `backend/` and `frontend/` directories per plan.md
-- [ ] T002 [P] Initialize Python project in `backend/` with FastAPI, uvicorn, ffmpeg-python dependencies
-- [ ] T003 [P] Initialize Next.js 14 project in `frontend/` with TypeScript, hls.js, Video.js dependencies
-- [ ] T004 [P] Configure Python linting (ruff) and formatting in `backend/.ruff.toml`
-- [ ] T005 [P] Configure TypeScript/ESLint in `frontend/tsconfig.json` and `frontend/.eslintrc.json`
-- [ ] T006 [P] Create Docker configurations: `backend/Dockerfile` and `frontend/Dockerfile`
-- [ ] T007 [P] Create k8s manifests in `k8s/` directory (backend-deployment.yaml, frontend-deployment.yaml, services, ingress)
+- [X] T001 Create project structure with `backend/` and `frontend/` directories per plan.md
+- [X] T002 [P] Initialize Python project in `backend/` with FastAPI, uvicorn, ffmpeg-python dependencies
+- [X] T003 [P] Initialize Next.js 14 project in `frontend/` with TypeScript, hls.js, Video.js dependencies
+- [X] T004 [P] Configure Python linting (ruff) and formatting in `backend/.ruff.toml`
+- [X] T005 [P] Configure TypeScript/ESLint in `frontend/tsconfig.json` and `frontend/.eslintrc.json`
+- [X] T006 [P] Create Docker configurations: `backend/Dockerfile` and `frontend/Dockerfile`
+- [X] T007 [P] Create k8s manifests in `k8s/` directory (backend-deployment.yaml, frontend-deployment.yaml, services, ingress)
 
 ---
 
@@ -33,17 +33,17 @@
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T008 [P] Create Pydantic models in `backend/src/models/camera.py` (CameraConfiguration)
-- [ ] T009 [P] Create Pydantic models in `backend/src/models/connection.py` (ConnectionSession, StreamMetadata)
-- [ ] T010 [P] Create TypeScript types in `frontend/src/types/camera.ts` (CameraConfiguration interface)
-- [ ] T011 [P] Create TypeScript types in `frontend/src/types/connection.ts` (ConnectionSession, StreamMetadata interfaces)
-- [ ] T012 Setup FastAPI application structure in `backend/src/main.py` with CORS configuration
-- [ ] T013 Create API routing structure in `backend/src/api/routes/__init__.py`
-- [ ] T014 [P] Create custom exceptions in `backend/src/core/exceptions.py` (RTSPConnectionError, ValidationError, etc.)
-- [ ] T015 [P] Setup configuration management in `backend/src/core/config.py` with environment variables
-- [ ] T016 [P] Create error handling middleware in `backend/src/api/dependencies.py`
-- [ ] T017 [P] Setup Next.js app structure in `frontend/src/app/layout.tsx` and `frontend/src/app/page.tsx`
-- [ ] T018 [P] Create API client base in `frontend/src/services/api.ts` with error handling
+- [X] T008 [P] Create Pydantic models in `backend/src/models/camera.py` (CameraConfiguration)
+- [X] T009 [P] Create Pydantic models in `backend/src/models/connection.py` (ConnectionSession, StreamMetadata)
+- [X] T010 [P] Create TypeScript types in `frontend/src/types/camera.ts` (CameraConfiguration interface)
+- [X] T011 [P] Create TypeScript types in `frontend/src/types/connection.ts` (ConnectionSession, StreamMetadata interfaces)
+- [X] T012 Setup FastAPI application structure in `backend/src/main.py` with CORS configuration
+- [X] T013 Create API routing structure in `backend/src/api/routes/__init__.py`
+- [X] T014 [P] Create custom exceptions in `backend/src/core/exceptions.py` (RTSPConnectionError, ValidationError, etc.)
+- [X] T015 [P] Setup configuration management in `backend/src/core/config.py` with environment variables
+- [X] T016 [P] Create error handling middleware in `backend/src/api/dependencies.py`
+- [X] T017 [P] Setup Next.js app structure in `frontend/src/app/layout.tsx` and `frontend/src/app/page.tsx`
+- [X] T018 [P] Create API client base in `frontend/src/services/api.ts` with error handling
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -57,21 +57,21 @@
 
 ### Implementation for User Story 1
 
-- [ ] T019 [P] [US1] Create ffmpeg manager service in `backend/src/services/ffmpeg_manager.py` (spawn/kill processes, temp dir management)
-- [ ] T020 [P] [US1] Create HLS transcoding service in `backend/src/services/hls_service.py` (RTSP→HLS conversion, segment management)
-- [ ] T021 [P] [US1] Create RTSP connection service in `backend/src/services/rtsp_service.py` (URL validation, codec detection, connectivity test)
-- [ ] T022 [US1] Implement POST /camera/connect endpoint in `backend/src/api/routes/camera.py` (depends on T019-T021)
-- [ ] T023 [US1] Implement POST /camera/disconnect endpoint in `backend/src/api/routes/camera.py`
-- [ ] T024 [US1] Implement GET /camera/stream/{sessionId}/playlist.m3u8 endpoint for HLS playlist serving
-- [ ] T025 [US1] Implement GET /camera/stream/{sessionId}/{segmentFile} endpoint for HLS segment serving
-- [ ] T026 [P] [US1] Create camera URL input form component in `frontend/src/components/CameraForm.tsx`
-- [ ] T027 [P] [US1] Create video player component in `frontend/src/components/VideoPlayer.tsx` using hls.js
-- [ ] T028 [P] [US1] Create connection status component in `frontend/src/components/ConnectionStatus.tsx`
-- [ ] T029 [US1] Create camera connection hook in `frontend/src/hooks/useCamera.ts` (manages ConnectionSession state)
-- [ ] T030 [US1] Integrate components in `frontend/src/app/page.tsx` - connect form + video player + status
-- [ ] T031 [US1] Add URL format validation (rtsp:// pattern) to CameraForm component
-- [ ] T032 [US1] Add loading indicator and button disable during connection attempts
-- [ ] T033 [US1] Add disconnect functionality to video player component
+- [X] T019 [P] [US1] Create ffmpeg manager service in `backend/src/services/ffmpeg_manager.py` (spawn/kill processes, temp dir management)
+- [X] T020 [P] [US1] Create HLS transcoding service in `backend/src/services/hls_service.py` (RTSP→HLS conversion, segment management)
+- [X] T021 [P] [US1] Create RTSP connection service in `backend/src/services/rtsp_service.py` (URL validation, codec detection, connectivity test)
+- [X] T022 [US1] Implement POST /camera/connect endpoint in `backend/src/api/routes/camera.py` (depends on T019-T021)
+- [X] T023 [US1] Implement POST /camera/disconnect endpoint in `backend/src/api/routes/camera.py`
+- [X] T024 [US1] Implement GET /camera/stream/{sessionId}/playlist.m3u8 endpoint for HLS playlist serving
+- [X] T025 [US1] Implement GET /camera/stream/{sessionId}/{segmentFile} endpoint for HLS segment serving
+- [X] T026 [P] [US1] Create camera URL input form component in `frontend/src/components/CameraForm.tsx`
+- [X] T027 [P] [US1] Create video player component in `frontend/src/components/VideoPlayer.tsx` using hls.js
+- [X] T028 [P] [US1] Create connection status component in `frontend/src/components/ConnectionStatus.tsx`
+- [X] T029 [US1] Create camera connection hook in `frontend/src/hooks/useCamera.ts` (manages ConnectionSession state)
+- [X] T030 [US1] Integrate components in `frontend/src/app/page.tsx` - connect form + video player + status
+- [X] T031 [US1] Add URL format validation (rtsp:// pattern) to CameraForm component
+- [X] T032 [US1] Add loading indicator and button disable during connection attempts
+- [X] T033 [US1] Add disconnect functionality to video player component
 
 **Checkpoint**: User Story 1 fully functional - can connect, view video, disconnect
 
@@ -85,15 +85,15 @@
 
 ### Implementation for User Story 2
 
-- [ ] T034 [P] [US2] Add error handling to RTSP service in `backend/src/services/rtsp_service.py` (timeout, unreachable, auth detection)
-- [ ] T035 [P] [US2] Add codec validation to HLS service in `backend/src/services/hls_service.py` (H.264/H.265 only)
-- [ ] T036 [US2] Enhance POST /camera/connect with comprehensive error responses (400/401/408/415/503 per contracts/api.md)
-- [ ] T037 [P] [US2] Create error message component in `frontend/src/components/ErrorMessage.tsx`
-- [ ] T038 [US2] Add error state handling to useCamera hook in `frontend/src/hooks/useCamera.ts`
-- [ ] T039 [US2] Integrate error display in connection form - show errors below connect button
-- [ ] T040 [US2] Add error clearing on retry - clear previous errors when new connection attempt starts
-- [ ] T041 [US2] Add authentication prompt functionality when 401 error received
-- [ ] T042 [US2] Add connection timeout handling (10 second limit) with timeout error display
+- [X] T034 [P] [US2] Add error handling to RTSP service in `backend/src/services/rtsp_service.py` (timeout, unreachable, auth detection)
+- [X] T035 [P] [US2] Add codec validation to HLS service in `backend/src/services/hls_service.py` (H.264/H.265 only)
+- [X] T036 [US2] Enhance POST /camera/connect with comprehensive error responses (400/401/408/415/503 per contracts/api.md)
+- [X] T037 [P] [US2] Create error message component in `frontend/src/components/ErrorMessage.tsx`
+- [X] T038 [US2] Add error state handling to useCamera hook in `frontend/src/hooks/useCamera.ts`
+- [X] T039 [US2] Integrate error display in connection form - show errors below connect button
+- [X] T040 [US2] Add error clearing on retry - clear previous errors when new connection attempt starts
+- [X] T041 [US2] Add authentication prompt functionality when 401 error received
+- [X] T042 [US2] Add connection timeout handling (10 second limit) with timeout error display
 
 **Checkpoint**: Error handling complete - users get clear feedback for all failure scenarios
 
@@ -107,17 +107,17 @@
 
 ### Implementation for User Story 3
 
-- [ ] T043 [P] [US3] Create localStorage service in `frontend/src/services/storage.ts` (save/load/delete camera configs)
-- [ ] T044 [P] [US3] Create saved cameras hook in `frontend/src/hooks/useSavedCameras.ts` (manage localStorage state)
-- [ ] T045 [P] [US3] Create saved cameras list component in `frontend/src/components/SavedCameras.tsx`
-- [ ] T046 [US3] Add save camera functionality to useCamera hook - save button when connected
-- [ ] T047 [US3] Add camera selection to CameraForm component - dropdown/list of saved cameras
-- [ ] T048 [US3] Add delete functionality to SavedCameras component with confirmation dialog
-- [ ] T049 [US3] Implement 5 camera limit validation with error message when limit reached
-- [ ] T050 [US3] Add credential prompting for saved cameras requiring authentication
-- [ ] T051 [US3] Add session credential storage in useCamera hook (Map<url, credentials>)
-- [ ] T052 [US3] Add credential reuse during session - skip prompt for same camera
-- [ ] T053 [US3] Integrate saved cameras UI in main page layout below connection form
+- [X] T043 [P] [US3] Create localStorage service in `frontend/src/services/storage.ts` (save/load/delete camera configs)
+- [X] T044 [P] [US3] Create saved cameras hook in `frontend/src/hooks/useSavedCameras.ts` (manage localStorage state)
+- [X] T045 [P] [US3] Create saved cameras list component in `frontend/src/components/SavedCameras.tsx`
+- [X] T046 [US3] Add save camera functionality to useCamera hook - save button when connected
+- [X] T047 [US3] Add camera selection to CameraForm component - dropdown/list of saved cameras
+- [X] T048 [US3] Add delete functionality to SavedCameras component with confirmation dialog
+- [X] T049 [US3] Implement 5 camera limit validation with error message when limit reached
+- [X] T050 [US3] Add credential prompting for saved cameras requiring authentication
+- [X] T051 [US3] Add session credential storage in useCamera hook (Map<url, credentials>)
+- [X] T052 [US3] Add credential reuse during session - skip prompt for same camera
+- [X] T053 [US3] Integrate saved cameras UI in main page layout below connection form
 
 **Checkpoint**: All user stories complete - full MVP with save/load functionality
 
@@ -127,12 +127,12 @@
 
 **Purpose**: Automatic reconnection handling per FR-009 requirements
 
-- [ ] T054 [P] Add connection monitoring to video player component (detect playback stall/error)
-- [ ] T055 Add exponential backoff reconnection to useCamera hook (2s, 4s, 8s delays, 3 attempts max)
-- [ ] T056 [P] Add reconnection status display to ConnectionStatus component ("Reconnecting... Attempt 1 of 3")
-- [ ] T057 Add manual reconnect option after auto-reconnection attempts exhausted
-- [ ] T058 Add cancel reconnection functionality for user control
-- [ ] T059 Add connection status polling via GET /camera/status/{sessionId} endpoint
+- [X] T054 [P] Add connection monitoring to video player component (detect playback stall/error)
+- [X] T055 Add exponential backoff reconnection to useCamera hook (2s, 4s, 8s delays, 3 attempts max)
+- [X] T056 [P] Add reconnection status display to ConnectionStatus component ("Reconnecting... Attempt 1 of 3")
+- [X] T057 Add manual reconnect option after auto-reconnection attempts exhausted
+- [X] T058 Add cancel reconnection functionality for user control
+- [X] T059 Add connection status polling via GET /camera/status/{sessionId} endpoint
 
 ---
 
@@ -140,11 +140,11 @@
 
 **Purpose**: System health checks and operational monitoring
 
-- [ ] T060 [P] Implement GET /health endpoint in `backend/src/api/routes/health.py` (ffmpeg availability check)
-- [ ] T061 [P] Add session management and cleanup in HLS service (1-hour timeout, temp file cleanup)
-- [ ] T062 [P] Add ffmpeg process monitoring and automatic cleanup on crashes
-- [ ] T063 [P] Add rate limiting middleware to camera connect/disconnect endpoints per contracts/api.md
-- [ ] T064 [P] Add connection limit enforcement (single concurrent connection per constitution)
+- [X] T060 [P] Implement GET /health endpoint in `backend/src/api/routes/health.py` (ffmpeg availability check)
+- [X] T061 [P] Add session management and cleanup in HLS service (1-hour timeout, temp file cleanup)
+- [X] T062 [P] Add ffmpeg process monitoring and automatic cleanup on crashes
+- [X] T063 [P] Add rate limiting middleware to camera connect/disconnect endpoints per contracts/api.md
+- [X] T064 [P] Add connection limit enforcement (single concurrent connection per constitution)
 
 ---
 
@@ -152,12 +152,12 @@
 
 **Purpose**: Improvements that affect multiple user stories
 
-- [ ] T065 [P] Add comprehensive logging across all backend services (connection attempts, errors, cleanup)
-- [ ] T066 [P] Add performance monitoring (connection time tracking, ffmpeg resource usage)
-- [ ] T067 [P] Code cleanup and refactoring - extract common utilities
-- [ ] T068 [P] Update documentation in `backend/README.md` and `frontend/README.md`
-- [ ] T069 [P] Add ARM64 compatibility testing for Raspberry Pi 5 deployment
-- [ ] T070 Run quickstart.md validation - verify dev setup instructions work
+- [X] T065 [P] Add comprehensive logging across all backend services (connection attempts, errors, cleanup)
+- [X] T066 [P] Add performance monitoring (connection time tracking, ffmpeg resource usage)
+- [X] T067 [P] Code cleanup and refactoring - extract common utilities
+- [X] T068 [P] Update documentation in `backend/README.md` and `frontend/README.md`
+- [X] T069 [P] Add ARM64 compatibility testing for Raspberry Pi 5 deployment
+- [X] T070 Run quickstart.md validation - verify dev setup instructions work
 
 ---
 
